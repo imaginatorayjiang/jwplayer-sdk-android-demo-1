@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.jwplayer.opensourcedemo.videolist_v1.VideoListActivity">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_video_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <com.jwplayer.opensourcedemo.videolist_v2.VideoListLayout
+        android:id="@+id/rv_video_list_fix"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</RelativeLayout>

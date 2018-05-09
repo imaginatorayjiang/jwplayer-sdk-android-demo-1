@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.jwplayer.opensourcedemo.MainActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:background="@color/gray"
+            android:textSize="33sp"
+            android:text="Go To List Demo"
+            android:onClick="goToListDemo"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:layout_height="0dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:background="@color/ccl_grey600"
+            android:textSize="33sp"
+            android:text="Go To JWPlayer Demo"
+            android:onClick="goToJWPlayerDemo"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:layout_height="0dp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

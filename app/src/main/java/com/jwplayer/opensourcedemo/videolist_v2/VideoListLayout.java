@@ -240,46 +240,45 @@ public class VideoListLayout extends RelativeLayout {
                 }
             });
     }
-
-    @Override
-    protected void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-
-        if (videoItemView != null) {
-            videoItemView.onChanged(newConfig);
-            if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
-                fullScreen.setVisibility(View.GONE);
-                videoList.setVisibility(View.VISIBLE);
-                fullScreen.removeAllViews();
-                if (postion <= mLayoutManager.findLastVisibleItemPosition()
-                    && postion >= mLayoutManager.findFirstVisibleItemPosition()) {
-                    View view = videoList.findViewHolderForAdapterPosition(postion).itemView;
-                    FrameLayout frameLayout = (FrameLayout) view.findViewById(R.id.layout_video);
-                    frameLayout.removeAllViews();
-                    frameLayout.addView(videoItemView);
-                    videoItemView.setShowContoller(true);
-                } else {
-                    videoLayout.removeAllViews();
-                    videoLayout.addView(videoItemView);
-                    videoItemView.setShowContoller(false);
-                    smallLayout.setVisibility(View.VISIBLE);
-                }
-            } else {
-                ViewGroup viewGroup = (ViewGroup) videoItemView.getParent();
-                if (viewGroup == null)
-                    return;
-                viewGroup.removeAllViews();
-                fullScreen.addView(videoItemView);
-                smallLayout.setVisibility(View.GONE);
-                videoList.setVisibility(View.GONE);
-                fullScreen.setVisibility(View.VISIBLE);
-            }
-        } else {
-            adapter.notifyDataSetChanged();
-            videoList.setVisibility(View.VISIBLE);
-            fullScreen.setVisibility(View.GONE);
-        }
-    }
+//
+//    @Override
+//    protected void onConfigurationChanged(Configuration newConfig) {
+//        super.onConfigurationChanged(newConfig);
+//        if (videoItemView != null) {
+////            videoItemView.onChanged(newConfig);
+//            if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
+//                fullScreen.setVisibility(View.GONE);
+//                videoList.setVisibility(View.VISIBLE);
+//                fullScreen.removeAllViews();
+//                if (postion <= mLayoutManager.findLastVisibleItemPosition()
+//                    && postion >= mLayoutManager.findFirstVisibleItemPosition()) {
+//                    View view = videoList.findViewHolderForAdapterPosition(postion).itemView;
+//                    FrameLayout frameLayout = (FrameLayout) view.findViewById(R.id.layout_video);
+//                    frameLayout.removeAllViews();
+//                    frameLayout.addView(videoItemView);
+//                    videoItemView.setShowContoller(true);
+//                } else {
+//                    videoLayout.removeAllViews();
+//                    videoLayout.addView(videoItemView);
+//                    videoItemView.setShowContoller(false);
+//                    smallLayout.setVisibility(View.VISIBLE);
+//                }
+//            } else {
+//                ViewGroup viewGroup = (ViewGroup) videoItemView.getParent();
+//                if (viewGroup == null)
+//                    return;
+//                viewGroup.removeAllViews();
+//                fullScreen.addView(videoItemView);
+//                smallLayout.setVisibility(View.GONE);
+//                videoList.setVisibility(View.GONE);
+//                fullScreen.setVisibility(View.VISIBLE);
+//            }
+//        } else {
+//            adapter.notifyDataSetChanged();
+//            videoList.setVisibility(View.VISIBLE);
+//            fullScreen.setVisibility(View.GONE);
+//        }
+//    }
 
     @Override
     protected void onAttachedToWindow() {
